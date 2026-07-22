@@ -1,11 +1,12 @@
 # framework/workflow
 
-**Status:** Not yet implemented (Sprint 1 — structure only)
+**Status:** Not yet implemented (Sprint 2 — structure and specification only)
 
-This directory will contain the implementation of the component described
-in [`docs/architecture/ARCHITECTURE.md`](../../docs/architecture/ARCHITECTURE.md).
-See that document for this component's responsibilities and interfaces.
+This directory will contain the Workflow Engine implementation. Full
+contract: [Workflow Engine Specification](../../docs/specifications/engines/WORKFLOW_ENGINE.md).
+See also [Workflow Specification](../../docs/workflows/WORKFLOW_SPEC.md)
+for the general workflow definition/step model.
 
-Implementation begins in Sprint 2 or later per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md), and requires
-explicit approval before work starts.
+Implementation begins in a future sprint per
+[Roadmap](../../docs/roadmap/ROADMAP.md), and requires explicit approval
+before work starts.

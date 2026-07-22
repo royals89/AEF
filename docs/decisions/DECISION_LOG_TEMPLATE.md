@@ -63,9 +63,13 @@ from.
 
 ## Index
 
-No decisions have been recorded yet. The first Decision Record will be
-`0001-` and should be added the first time Sprint 2 work requires choosing
-between viable alternatives (e.g., core implementation language).
+| # | Title | Status |
+|---|---|---|
+| [0001](0001-sprint-2-structural-evolution.md) | Sprint 2 structural evolution: discovery, planning, memory, plugins, config | Accepted |
+
+The next decision recorded should be `0002-`, likely the first Sprint 3
+implementation-language choice per
+[Roadmap](../roadmap/ROADMAP.md).
 
 ## Related Documents
 

@@ -1,11 +1,10 @@
 # framework/governance
 
-**Status:** Not yet implemented (Sprint 1 — structure only)
+**Status:** Not yet implemented (unchanged from Sprint 1 — not in scope for Sprint 2)
 
-This directory will contain the implementation of the component described
-in [`docs/architecture/ARCHITECTURE.md`](../../docs/architecture/ARCHITECTURE.md).
-See that document for this component's responsibilities and interfaces.
-
-Implementation begins in Sprint 2 or later per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md), and requires
-explicit approval before work starts.
+This directory will contain the Governance Layer implementation. See
+[Architecture Specification](../../docs/architecture/ARCHITECTURE.md#governance-layer)
+and [ADR 0001](../../docs/decisions/0001-sprint-2-structural-evolution.md)
+(retained-but-untouched decision). Implementation begins in a future sprint
+per [Roadmap](../../docs/roadmap/ROADMAP.md), and requires explicit
+approval before work starts.

@@ -1,11 +1,13 @@
 # framework/shared
 
-**Status:** Not yet implemented (Sprint 1 — structure only)
+**Status:** Not yet implemented (Sprint 2 — structure only)
 
-This directory will contain the implementation of the component described
-in [`docs/architecture/ARCHITECTURE.md`](../../docs/architecture/ARCHITECTURE.md).
-See that document for this component's responsibilities and interfaces.
+This directory will contain cross-cutting utilities and the Plugin Manager,
+which discovers/loads/validates both `plugins/` entries and `domain-packs/`
+packs. See
+[Architecture Specification](../../docs/architecture/ARCHITECTURE.md#plugin-manager--plugins--domain-packs)
+and [Plugin Architecture Specification](../../docs/architecture/PLUGIN_ARCHITECTURE.md).
 
-Implementation begins in Sprint 2 or later per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md), and requires
-explicit approval before work starts.
+Implementation begins in a future sprint per
+[Roadmap](../../docs/roadmap/ROADMAP.md), and requires explicit approval
+before work starts.

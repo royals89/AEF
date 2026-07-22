@@ -1,11 +1,10 @@
 # framework/quality
 
-**Status:** Not yet implemented (Sprint 1 — structure only)
+**Status:** Not yet implemented (Sprint 2 — structure and specification only)
 
-This directory will contain the implementation of the component described
-in [`docs/architecture/ARCHITECTURE.md`](../../docs/architecture/ARCHITECTURE.md).
-See that document for this component's responsibilities and interfaces.
+This directory will contain the Quality Gate Manager implementation. Full
+contract: [Quality Gate Manager Specification](../../docs/specifications/engines/QUALITY_GATE_MANAGER.md).
 
-Implementation begins in Sprint 2 or later per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md), and requires
-explicit approval before work starts.
+Implementation begins in a future sprint per
+[Roadmap](../../docs/roadmap/ROADMAP.md), and requires explicit approval
+before work starts.
