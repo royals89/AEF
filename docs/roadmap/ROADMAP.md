@@ -19,91 +19,97 @@ code.
 
 **Tag:** `sprint-1-complete`
 
-## Sprint 2 — Runtime Foundation (current)
+## Sprint 2 — Runtime Foundation (complete)
 
-**Deliverable:** Architectural foundation for runtime execution — no
-engineering agents, no business logic, no AI prompts, no implementation
-code. Specifically:
+**Delivered:** New top-level directories `runtime/`, `plugins/`,
+`config/`, `assets/`; `framework/` extended with `discovery/`
+(renamed/broadened from `analyzer/`), `planning/` (new), and `memory/`
+(promoted to a full component); full specifications for the Bootstrap,
+Discovery, Planning, Orchestrator, Workflow, Memory Manager, and Quality
+Gate Manager engines; Runtime and Plugin Architecture Specifications;
+Configuration Specification with `enterprise`/`startup`/`ai-platform`/
+`trading` profiles. No agents, commands, hooks, or implementation code.
 
-- New top-level directories: `runtime/`, `plugins/`, `config/`, `assets/`.
-- `framework/` extended with `discovery/` (renamed/broadened from
-  `analyzer/`), `planning/` (new), and `memory/` (promoted to a full
-  component) — see
-  [ADR 0001](../decisions/0001-sprint-2-structural-evolution.md).
-- Runtime adapters structured for Claude Code and a Shared Runtime layer,
-  with documentation on adding future runtimes (Codex CLI, Gemini CLI,
-  etc.) without changing the framework core — see
-  [Runtime Architecture Specification](../architecture/RUNTIME_ARCHITECTURE.md).
-- Full specifications (Purpose, Responsibilities, Inputs, Outputs,
-  Interfaces, Lifecycle, Extension Points, Error Handling, Future
-  Enhancements) for the Bootstrap Engine, Discovery Engine, Planning
-  Engine, Engineering Orchestrator, Workflow Engine, Memory Manager, and
-  Quality Gate Manager — see
-  [docs/specifications/engines/](../specifications/engines/).
-- A plugin architecture separating languages, frameworks, databases, cloud
-  providers, AI providers, and security, config-driven and
-  runtime-independent — see
-  [Plugin Architecture Specification](../architecture/PLUGIN_ARCHITECTURE.md).
-- A configuration model with `enterprise`, `startup`, `ai-platform`, and
-  `trading` profiles, with no hardcoded profile behavior — see
-  [Configuration Specification](../specifications/CONFIGURATION_SPEC.md).
+**Tag:** `sprint-2-complete`
 
-**Status:** Complete — see the Sprint 2 Completion Report for the final
-file inventory and risk assessment.
+## Sprint 3 — Engineering Agent Framework (complete)
 
-**Explicit exclusions for this sprint (unchanged from Sprint 1's
-discipline):**
+**Delivered:** Agent Framework Specification covering the agent contract,
+lifecycle, capabilities, communication, registration/discovery,
+versioning, logging/memory usage, and quality gates for agents (see
+[Agent Framework Specification](../specifications/agents/AGENT_FRAMEWORK_SPEC.md)).
+Five shared assets (Agent Contract, Capability Catalog, Communication
+Rules, Output Standards, Review Checklist — see
+[docs/specifications/agents/shared/](../specifications/agents/shared/))
+that every individual agent specification references rather than
+duplicates. Eight team charters and 24 individual agent specifications
+across Architecture, Engineering, Security, Quality, Platform, AI,
+Documentation, and Project teams (see
+[docs/specifications/agents/teams/](../specifications/agents/teams/)).
+[ADR 0002](../decisions/0002-agent-specifications-location.md) establishes
+that specifications live in `docs/specifications/agents/`, not
+`.claude/agents/`, keeping this sprint specification-only. No commands,
+hooks, templates, or runtime logic.
+
+**Tag:** `sprint-3-complete`
+
+**Explicit exclusions for this sprint (per the Sprint 3 bootstrap's own
+instruction):**
 - No content in `.claude/agents/`, `.claude/commands/`, `.claude/hooks/`,
   `.claude/templates/` beyond placeholder READMEs
-- No implementation in `framework/*`, `runtime/*`, or `plugins/*` beyond
-  directory scaffolding and specifications
-- No business logic or AI prompt content anywhere in the repository
-- No CI in `.github/`
-- No Domain Packs in `domain-packs/`
+- No agent runtime logic — every agent is Specified, not Registered or
+  Invoked, per the [Agent Framework Specification's lifecycle](../specifications/agents/AGENT_FRAMEWORK_SPEC.md#2-agent-lifecycle)
+- No business logic or implementation code anywhere in the repository
 
-## Sprint 3 — Agents, Commands, Hooks & Templates (requires approval)
+## Sprint 4 — Agents, Commands, Hooks & Templates (requires approval)
 
 **Planned deliverable:** `.claude/agents/`, `.claude/commands/`,
 `.claude/hooks/`, and `.claude/templates/` content, built against the
-Sprint 2 specifications. First actual implementation code for the Core
-Framework, Runtime Abstraction (Claude Code adapter), Discovery Engine, and
-Planning Engine, per the specifications in
-[docs/specifications/engines/](../specifications/engines/). First Decision
-Records for implementation language and configuration schema format.
-Initial CI in `.github/`.
+Sprint 3 agent specifications and Sprint 2 engine specifications. First
+actual implementation code for the Core Framework, Runtime Abstraction
+(Claude Code adapter), Discovery Engine, and Planning Engine. First
+Decision Records for implementation language and configuration schema
+format. Initial CI in `.github/`. First agents move from Specified to
+Registered, per the
+[Agent Framework Specification's lifecycle](../specifications/agents/AGENT_FRAMEWORK_SPEC.md#2-agent-lifecycle).
 
-**Gate:** Sprint 3 does not begin automatically on Sprint 2 completion. It
-requires explicit approval, per the Sprint 2 bootstrap requirement to
-"wait for Sprint 3 approval before implementing those components"
-(agents, commands, hooks, templates), consistent with Sprint 1's original
-requirement to wait before implementing any runtime components.
+**Gate:** Sprint 4 does not begin automatically on Sprint 3 completion. It
+requires explicit approval, per the Sprint 3 bootstrap requirement to
+"wait for Sprint 4 approval before proceeding" (to commands, hooks,
+templates, and runtime logic), consistent with the same discipline applied
+before every prior sprint transition.
 
-## Sprint 4 — Orchestration & Workflows (tentative)
+## Sprint 5 — Orchestration & Workflows (tentative)
 
 **Planned deliverable:** Engineering Orchestrator, Workflow Engine, and the
 first set of built-in workflow definitions (see
 [Workflow Specification](../workflows/WORKFLOW_SPEC.md)), wired to the
-first `.claude/commands/` entries from Sprint 3.
+first `.claude/commands/` entries and invoking the first Registered agents
+from Sprint 4.
 
-## Sprint 5 — Quality & Governance (tentative)
+## Sprint 6 — Quality & Governance (tentative)
 
 **Planned deliverable:** Quality Gate Manager and Governance Layer
 implementation, including audit logging and approval-checkpoint
-enforcement (see [Security Standards](../standards/SECURITY_STANDARDS.md)).
+enforcement (see [Security Standards](../standards/SECURITY_STANDARDS.md)),
+and the first automated evaluation of the
+[Review Checklist](../specifications/agents/shared/REVIEW_CHECKLIST.md)
+against agent output.
 
-## Sprint 6 — Plugin Ecosystem (tentative)
+## Sprint 7 — Plugin Ecosystem (tentative)
 
 **Planned deliverable:** Plugin Manager implementation, the first concrete
 `plugins/` entries per category, and the first `domain-packs/` pack(s),
 validated against [Plugin Standards](../standards/PLUGIN_STANDARDS.md) and
 [Plugin Architecture Specification](../architecture/PLUGIN_ARCHITECTURE.md).
 
-## Beyond Sprint 6
+## Beyond Sprint 7
 
 Additional Runtime Adapters beyond Claude Code (Codex CLI, Gemini CLI, per
 [Runtime Architecture Specification](../architecture/RUNTIME_ARCHITECTURE.md#adding-a-new-runtime-eg-codex-cli-gemini-cli)),
-expanded plugin/domain-pack library, and Memory Manager backend options —
-scoped in more detail once Sprints 3–6 establish the core.
+expanded plugin/domain-pack library, additional agents beyond the initial
+24, and Memory Manager backend options — scoped in more detail once
+Sprints 4–7 establish the core.
 
 ## Related Documents
 

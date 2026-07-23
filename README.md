@@ -1,7 +1,7 @@
 # AEF — AI Engineering Framework
 
-**Status:** Sprint 2 — Runtime Foundation (specifications and structure only, no implementation code)
-**Version:** 1.0.0-sprint2
+**Status:** Sprint 3 — Engineering Agent Framework (specifications only, no runtime code)
+**Version:** 1.0.0-sprint3
 
 AEF is a reusable, vendor-neutral AI Engineering Framework designed to standardize
 software engineering workflows for AI-assisted development. It runs inside
@@ -24,22 +24,27 @@ how AI coding agents discover, plan, build, test, and govern software.
 | Understand the plugin system | [docs/architecture/PLUGIN_ARCHITECTURE.md](docs/architecture/PLUGIN_ARCHITECTURE.md) |
 | Understand configuration and profiles | [docs/specifications/CONFIGURATION_SPEC.md](docs/specifications/CONFIGURATION_SPEC.md) |
 | Read a specific engine's full contract | [docs/specifications/engines/](docs/specifications/engines/) |
+| Understand the agent framework (contract, lifecycle, teams) | [docs/specifications/agents/AGENT_FRAMEWORK_SPEC.md](docs/specifications/agents/AGENT_FRAMEWORK_SPEC.md) |
+| Read a specific agent's specification | [docs/specifications/agents/teams/](docs/specifications/agents/teams/) |
 | Follow engineering standards | [docs/standards/](docs/standards/) |
 | Understand supported workflows | [docs/workflows/WORKFLOW_SPEC.md](docs/workflows/WORKFLOW_SPEC.md) |
 | See what's planned next | [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) |
 | Contribute | [docs/standards/CONTRIBUTION_GUIDE.md](docs/standards/CONTRIBUTION_GUIDE.md) |
 | See why a decision was made | [docs/decisions/](docs/decisions/) |
 
-## Sprint 2 Scope
+## Sprint 3 Scope
 
-Sprint 2 evolves Sprint 1's foundation into the **Runtime Foundation**:
-runtime adapter structure and contract (`runtime/`), a categorized plugin
-system (`plugins/`), a configuration/profile model (`config/`), and full
-specifications for every core engine (Bootstrap, Discovery, Planning,
-Orchestrator, Workflow, Memory, Quality Gate). It intentionally does
-**not** include agents, commands, hooks, templates, or any implementation
-code — see [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) for what
-requires explicit approval before it begins.
+Sprint 3 builds the **Engineering Agent Framework**: a standard agent
+contract, lifecycle, and five shared assets (Agent Contract, Capability
+Catalog, Communication Rules, Output Standards, Review Checklist — see
+[docs/specifications/agents/shared/](docs/specifications/agents/shared/))
+that 24 individual agent specifications reference rather than duplicate,
+organized into eight teams (Architecture, Engineering, Security, Quality,
+Platform, AI, Documentation, Project — see
+[docs/specifications/agents/teams/](docs/specifications/agents/teams/)).
+It intentionally does **not** include commands, hooks, templates, or
+runtime logic — see [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) for
+what requires explicit approval before it begins.
 
 ## Repository Structure (summary)
 
@@ -73,7 +78,7 @@ AEF/
 │   ├── schema/                 Configuration schemas
 │   └── profiles/                enterprise, startup, ai-platform, trading
 ├── assets/                   Static assets
-├── docs/                     All documentation (Sprint 1 and 2's primary deliverable)
+├── docs/                     All documentation (Sprint 1–3's primary deliverable)
 ├── standards/                 Machine-readable standards (linting configs, schemas)
 ├── templates/                 Project/document templates
 ├── domain-packs/              Industry/domain-vertical extension packs (Sprint 5+)

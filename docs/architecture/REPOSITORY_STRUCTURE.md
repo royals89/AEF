@@ -143,7 +143,7 @@ All documentation, split by purpose:
 | `architecture/` | This guide, the Architecture Specification |
 | `standards/` | Engineering standards (coding, security, testing, etc.) |
 | `workflows/` | Workflow Specification and individual workflow definitions |
-| `specifications/` | Master Specification, Configuration Specification, and `engines/` (one specification per engine: Bootstrap, Discovery, Planning, Orchestrator, Workflow, Memory, Quality Gate) |
+| `specifications/` | Master Specification, Configuration Specification, `engines/` (one specification per engine), and `agents/` (Agent Framework Specification, shared agent assets, and per-team agent specifications — see [ADR 0002](../decisions/0002-agent-specifications-location.md)) |
 | `roadmap/` | Roadmap and sprint plans |
 | `decisions/` | Architecture Decision Records (ADRs) |
 
