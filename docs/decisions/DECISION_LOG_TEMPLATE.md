@@ -67,8 +67,9 @@ from.
 |---|---|---|
 | [0001](0001-sprint-2-structural-evolution.md) | Sprint 2 structural evolution: discovery, planning, memory, plugins, config | Accepted |
 | [0002](0002-agent-specifications-location.md) | Agent specifications live in docs/, not .claude/agents/ | Accepted |
+| [0003](0003-automation-specifications-location.md) | Automation specifications live in docs/, not .claude/commands/ or .claude/hooks/ | Accepted |
 
-The next decision recorded should be `0003-`, likely the first
+The next decision recorded should be `0004-`, likely the first
 implementation-language choice per [Roadmap](../roadmap/ROADMAP.md).
 
 ## Related Documents
