@@ -1,16 +1,20 @@
 # .claude/hooks
 
-**Status:** Not yet implemented (Sprint 4 — specification complete, no loadable definitions yet)
+**Status:** Implemented (Sprint 5) — 12 lifecycle hook scripts plus a
+manifest wiring them to invocation points.
 
-This directory will hold loadable Claude Code lifecycle hook
-implementations, once a future sprint converts the
-[Hook Framework](../../docs/specifications/automation/hooks/HOOK_FRAMEWORK.md)'s
-12 lifecycle hooks into actual runtime definitions Claude Code can load.
-See
-[ADR 0003](../../docs/decisions/0003-automation-specifications-location.md)
-for why the specification lives in `docs/` rather than here during
-Sprint 4.
+Each `.sh` file implements one lifecycle hook from
+`docs/specifications/automation/hooks/HOOK_FRAMEWORK.md`. Before-hooks
+exit non-zero to halt; after-hooks are observation-only and never block
+(consistent with the Hook Framework's fixed rule).
 
-Populated starting a future sprint per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md), and requires
-explicit approval before work starts.
+Commands under `.claude/commands/` invoke the relevant hook script at the
+matching point in their own instructions. `hooks-manifest.json` documents
+which command invokes which hook, and notes optional wiring into Claude
+Code's native `PreToolUse`/`PostToolUse` hook events via
+`.claude/settings.json` for the hooks where that correspondence is
+natural (file modification and commit hooks).
+
+See `docs/specifications/automation/hooks/HOOK_FRAMEWORK.md` for full
+rationale and `docs/specifications/automation/AUTOMATION_RULES.md` for the
+baseline rules these hooks enforce by default.

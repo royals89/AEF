@@ -1,0 +1,89 @@
+{
+  "_comment": "Maps AEF's 12 lifecycle hooks (docs/specifications/automation/hooks/HOOK_FRAMEWORK.md) to concrete trigger points. AEF hooks fire at workflow-lifecycle stages, which commands invoke explicitly by calling the matching script below at the right point in their own instructions. Where a natural correspondence to Claude Code's native tool-use hook events (PreToolUse/PostToolUse) exists, it is noted for optional wiring into .claude/settings.json.",
+  "hooks": [
+    {
+      "id": "before-analysis",
+      "script": ".claude/hooks/before-analysis.sh",
+      "can_halt": true,
+      "invoked_by": ["/analyze", "/bootstrap"],
+      "native_claude_code_correspondence": null
+    },
+    {
+      "id": "after-analysis",
+      "script": ".claude/hooks/after-analysis.sh",
+      "can_halt": false,
+      "invoked_by": ["/analyze", "/bootstrap"],
+      "native_claude_code_correspondence": null
+    },
+    {
+      "id": "before-planning",
+      "script": ".claude/hooks/before-planning.sh",
+      "can_halt": true,
+      "invoked_by": ["/plan"],
+      "native_claude_code_correspondence": null
+    },
+    {
+      "id": "after-planning",
+      "script": ".claude/hooks/after-planning.sh",
+      "can_halt": false,
+      "invoked_by": ["/plan"],
+      "native_claude_code_correspondence": null
+    },
+    {
+      "id": "before-generation",
+      "script": ".claude/hooks/before-code-generation.sh",
+      "can_halt": true,
+      "invoked_by": ["/implement"],
+      "native_claude_code_correspondence": "PreToolUse (Edit/Write matcher) - optional"
+    },
+    {
+      "id": "after-generation",
+      "script": ".claude/hooks/after-code-generation.sh",
+      "can_halt": false,
+      "invoked_by": ["/implement"],
+      "native_claude_code_correspondence": "PostToolUse (Edit/Write matcher) - optional"
+    },
+    {
+      "id": "before-file-modification",
+      "script": ".claude/hooks/before-file-modification.sh",
+      "can_halt": true,
+      "invoked_by": ["/implement"],
+      "native_claude_code_correspondence": "PreToolUse (Edit/Write/NotebookEdit matcher) - optional"
+    },
+    {
+      "id": "after-file-modification",
+      "script": ".claude/hooks/after-file-modification.sh",
+      "can_halt": false,
+      "invoked_by": ["/implement"],
+      "native_claude_code_correspondence": "PostToolUse (Edit/Write/NotebookEdit matcher) - optional"
+    },
+    {
+      "id": "before-commit",
+      "script": ".claude/hooks/before-commit.sh",
+      "can_halt": true,
+      "invoked_by": ["/implement", "/deploy"],
+      "native_claude_code_correspondence": "PreToolUse (Bash matcher, git commit) - optional"
+    },
+    {
+      "id": "after-commit",
+      "script": ".claude/hooks/after-commit.sh",
+      "can_halt": false,
+      "invoked_by": ["/implement", "/deploy"],
+      "native_claude_code_correspondence": "PostToolUse (Bash matcher, git commit) - optional"
+    },
+    {
+      "id": "before-deployment",
+      "script": ".claude/hooks/before-deployment.sh",
+      "can_halt": true,
+      "invoked_by": ["/deploy"],
+      "native_claude_code_correspondence": null
+    },
+    {
+      "id": "after-deployment",
+      "script": ".claude/hooks/after-deployment.sh",
+      "can_halt": false,
+      "invoked_by": ["/deploy"],
+      "native_claude_code_correspondence": null
+    }
+  ]
+}

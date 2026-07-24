@@ -1,9 +1,12 @@
 # .claude/skills
 
-**Status:** Not yet implemented (Sprint 1 — structure only)
+**Status:** Implemented (Sprint 5) — 6 reusable skills.
 
-This directory will hold Claude-Code-specific skills, part of the Runtime
-Abstraction's Claude Code adapter (see
-[`docs/architecture/ARCHITECTURE.md`](../../docs/architecture/ARCHITECTURE.md#runtime-abstraction)).
-Populated starting Sprint 2+ per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md).
+Each subdirectory is a Claude Code Skill (`SKILL.md` with frontmatter +
+guidance). `ai-engineering-core` is the baseline every AEF task loads
+first; the other five (`architecture`, `implementation`, `review`,
+`testing`, `security`) provide team-specific practices and are cited by
+the relevant agents under `.claude/agents/`.
+
+Skills reference `.claude/shared/` for concrete checklists/standards
+rather than duplicating them.

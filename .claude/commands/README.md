@@ -1,15 +1,17 @@
 # .claude/commands
 
-**Status:** Not yet implemented (Sprint 4 — specifications complete, no loadable definitions yet)
+**Status:** Implemented (Sprint 5) — 11 working slash commands.
 
-This directory will hold loadable Claude Code slash-command definitions,
-once a future sprint converts the 12 command specifications in
-[`docs/specifications/automation/commands/`](../../docs/specifications/automation/commands/)
-into actual runtime definitions Claude Code can load. See
-[ADR 0003](../../docs/decisions/0003-automation-specifications-location.md)
-for why the specifications live in `docs/` rather than here during
-Sprint 4.
+Each `.md` file is a loadable Claude Code command implementing the
+specification from `docs/specifications/automation/commands/`. Commands
+invoke agents under `.claude/agents/` and, where applicable, the workflows
+catalogued in `docs/specifications/automation/workflows/WORKFLOW_LIBRARY.md`.
 
-Populated starting a future sprint per
-[`docs/roadmap/ROADMAP.md`](../../docs/roadmap/ROADMAP.md), and requires
-explicit approval before work starts.
+Note: Sprint 4 specified 12 commands including `release`; Sprint 5's
+implementation scope named 11, omitting `release`. See the Sprint 5
+completion report for this gap — `release`'s specification
+(`docs/specifications/automation/commands/RELEASE.md`) is unimplemented
+pending explicit direction.
+
+See `docs/specifications/automation/AUTOMATION_ARCHITECTURE.md` for the
+full design rationale.
